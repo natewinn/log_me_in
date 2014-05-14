@@ -1,0 +1,65 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_foundation-icons 
+ *= require_foundation.min
+ *= require_tree .
+ *= require_self
+ */
+
+h1, h2, h3, h4, h5, h6 { font-family: Open Sans }
+body { font-family: Open Sans }
+html { font-family: Open Sans }
+p { font-family: Open Sans }
+a { font-family: Open Sans }
+
+.signup-panel {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 30px;
+  background: #fff;
+}
+.signup-panel i {
+  font-size: 30px;
+  line-height: 50px;
+  color: #999;
+}
+.signup-panel form input, .signup-panel form span {
+  height: 50px;
+}
+.signup-panel .welcome {
+  font-size: 26px;
+  text-align: center;
+  margin-left: 0;
+}
+.signup-panel p {
+  font-size: 13px;
+  font-weight: 200;
+  margin-left: 25%;
+}
+.signup-panel .button {
+  margin-left: 35%;
+}
+
+.background { 
+	position: fixed; 
+	background:rgba(0,0,0,0.6); 
+	width: 100%; 
+	height: 100%; 
+	top: 0px; 
+	left: 0px 
+}
+
+.top-bar {
+	font-weight: 300;
+}

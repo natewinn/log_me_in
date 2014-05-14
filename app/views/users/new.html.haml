@@ -1,0 +1,27 @@
+/ - Page Title -/
+- content_for(:title, 'Upload Photo')
+
+/ - Breadcrumb Nav -/
+%nav.breadcrumbs
+	.medium-6.small-3.columns
+	%a{ href: events_path } Home
+	%a{ href: new_user_path } Create User
+
+/ - New User Form -/
+.top-section
+	.row
+		.large-8.column
+			.form
+				%fieldset
+					%legend Create Profile
+					= form_for @new_user do |user|
+					%label Name
+					= user.text_field :name
+					%label Email
+					= user.text_field :email
+					%label Address
+					= user.text_field :address
+					%label Password
+					= user.text_field :password
+					%p
+					= user.submit "Create Profile", class: "default button"
