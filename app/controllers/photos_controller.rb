@@ -3,6 +3,7 @@ class PhotosController < ApplicationController
 
 	def index
 		@photos = Photo.all
+		@new_photo = Photo.new
 	end
 
 	def show
@@ -33,6 +34,12 @@ class PhotosController < ApplicationController
 		else 
 			redirect_to edit_photo_path
 		end
+	end
+
+	def upload_image
+		@photo = Photo.find(params[:id])
+		file = @photo.pic_upload
+		send_file file.path
 	end
 
 	def destroy

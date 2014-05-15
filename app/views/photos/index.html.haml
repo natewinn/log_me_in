@@ -1,1 +1,25 @@
-This is the photos index page.
+#box
+  .background
+    .row
+      .large-6.columns.large-centered
+        .signup-panel
+          %p.welcome Upload a Photo
+          = form_for @new_photo do |photo|
+            .row
+              .small-11.columns.small-centered
+                = photo.text_field :photo_name, autofocus: true, placeholder: "Photo Name", class: "text-box"
+            .row            
+              .small-11.columns.small-centered
+                = photo.date_field :photo_date, autofocus: true, class: "text-box"          
+            .row              
+              .small-11.columns.small-centered
+                = photo.text_area :photo_description, autofocus: true, placeholder: "Photo Description", class: "text-box"
+                = photo.file_field :pic_upload            
+            .large-12
+              %toggle
+                = photo.submit "Upload Photo", class: "button extend"  
+          %toggle.button
+            Cancel               
+
+%toggle
+  .button TOGGLE VISIBILITY

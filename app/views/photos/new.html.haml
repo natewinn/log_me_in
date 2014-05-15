@@ -1,1 +1,19 @@
-new.html.haml
+/ - Photo Upload Form -/
+.top-section
+  .row
+    .large-6.column.large-centered
+      .form#form
+        %fieldset
+          %legend Upload Your Photo
+          = form_for @new_photo do |f|
+            %label Photo Name
+            = f.text_field :photo_name, class: "text-box"
+            %label Photo Date
+            = f.date_field :photo_date, class: "text-box"          
+            %label Photo Description
+            = f.text_area :photo_description, class: "text-box"
+            %label Choose Your Photo
+            = f.file_field :pic_upload
+            %p            
+            = f.submit "Upload Photo", class: "default button"
+
