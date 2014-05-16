@@ -17,7 +17,6 @@ class UsersController < ApplicationController
 		
 		respond_to do |format|
 			if @user.save
-				debugger
 			end
 		end	
 	end

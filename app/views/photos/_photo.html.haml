@@ -1,0 +1,7 @@
+- @photos.each do |photo| 
+  .photo_containter.medium-6.large-3.columns
+    %h5 
+      = photo.photo_name
+    %img.th{ src: photo.pic_upload }
+    %p
+    = button_to 'Delete Photo', photo, remote: 'true', confirm: 'Are you sure?', method: 'delete', class: 'button expand small secondary'

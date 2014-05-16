@@ -12,7 +12,7 @@
     <ul class="right">
         <% if user_signed_in? %>
             <li class="divider hide-for-small"></li>
-            <li><a href="">Upload Photo</a></li>
+            <li><a class="modal-reveal">Upload Photo</a></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
         <% else %>
             <li><%= link_to "Sign in", new_user_session_path %></li>

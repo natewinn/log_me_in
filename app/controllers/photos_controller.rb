@@ -1,40 +1,29 @@
 class PhotosController < ApplicationController
-	before_filter :authenticate_user!
+	before_filter :authenticate_user!, :load
 
-	def index
+	def load
 		@photos = Photo.all
 		@new_photo = Photo.new
-	end
+	end	
 
-	def show
-		@photo = Photo.find(params[:id])
-	end
-
-	def new
-		@new_photo = Photo.new
+	def index
 	end
 
 	def create
-		@new_photo = Photo.new(user_params)
+		@new_photo = Photo.new(photo_params)
 		if @new_photo.save
 			redirect_to photos_path
 		else
-			redirect_to new_photos_path
+			flash[:notice] = "Photo upload unsuccessful"
 		end
 	end
 
-	def edit
+	def destroy
 		@photo = Photo.find(params[:id])
-	end
-
-	def update
-		@photo = Photo.find(params[:id])
-		if @photo.update_attributes(user_params)
-			redirect_to photos_path
-		else 
-			redirect_to edit_photo_path
-		end
-	end
+		@photo.destroy
+		flash[:notice] = "Photo deleted."
+		@photos = Photo.all
+	end			
 
 	def upload_image
 		@photo = Photo.find(params[:id])
@@ -42,15 +31,9 @@ class PhotosController < ApplicationController
 		send_file file.path
 	end
 
-	def destroy
-		@photo = Photo.find(params[:id])
-		@photo.destroy
-			redirect_to photos_path
-	end			
-
 	private
 
-	def user_params
+	def photo_params
 		params.require(:photo).permit!
 	end
 end

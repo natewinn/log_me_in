@@ -1,24 +1,28 @@
-#box
-  .background
-    .row
-      .large-6.columns.large-centered
-        .upload-panel
-          %p.welcome Upload a Photo
-          = form_for @new_photo do |photo|
-            .row
-              .small-11.columns.small-centered
-                = photo.text_field :photo_name, autofocus: true, placeholder: "Photo Name", class: "text-box"
-            .row            
-              .small-11.columns.small-centered
-                = photo.date_field :photo_date, autofocus: true, class: "text-box"          
-            .row              
-              .small-11.columns.small-centered
-                = photo.text_area :photo_description, autofocus: true, placeholder: "Photo Description", class: "text-box"
-                = photo.file_field :pic_upload            
-            .large-12
-              %toggle
-                = photo.submit "Upload Photo", class: "button extend"  
-          %toggle.button
-            Cancel               
+/ - Photo Grid -/
+.top-section
+  .row
+    #photo-box= render partial: 'photo'
 
-%toggle.button TOGGLE VISIBILITY
+
+/ - Upload Photo Modal -/
+#bottom.upload-background
+  .row
+    .large-6.columns.large-centered
+      #top.upload-panel
+        %p.welcome Upload a Photo
+        = form_for @new_photo do |photo|
+          .row
+            .small-11.columns.small-centered
+              = photo.text_field :photo_name, autofocus: true, placeholder: "Photo Name", class: "text-box"
+          .row            
+            .small-11.columns.small-centered
+              = photo.date_field :photo_date, autofocus: true, class: "text-box"          
+          .row              
+            .small-11.columns.small-centered
+              = photo.text_area :photo_description, autofocus: true, placeholder: "Photo Description", class: "text-box"
+              = photo.file_field :pic_upload            
+          .large-12
+            .modal-hide
+              = photo.submit "Upload Photo", class: "button"  
+            .modal-hide.button
+              Cancel

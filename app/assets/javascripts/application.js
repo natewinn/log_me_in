@@ -15,6 +15,6 @@
 //= require jquery_ujs
 //= require custom
 //= require foundation.min
+//= require rails
 //= require turbolinks
 //= require_tree .
-

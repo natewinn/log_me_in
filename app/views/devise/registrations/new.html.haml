@@ -1,0 +1,23 @@
+.background
+  .row
+    .large-6.columns.large-centered
+      .signup-panel
+        %p.welcome Create an Account
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          %test
+          .small-10.columns.small-centered
+            = f.text_field :name, autofocus: true, placeholder: "Name", type: "text", class: "text-box"
+          %br
+          .small-10.columns.small-centered
+            = f.email_field :email, autofocus: true, placeholder: "Email", type: "text", class: "text-box"
+          %br
+          .small-10.columns.small-centered
+            = f.password_field :password, autocomplete: "off", placeholder: "Password", class: "text-box"
+          %br
+          .small-10.columns.small-centered
+            = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Password", class: "text-box"
+          %br
+            .small-10.columns.small-centered
+              = f.submit "Create account", class: "small button "
+              %br
+              = render "devise/shared/links"

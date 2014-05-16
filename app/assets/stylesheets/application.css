@@ -10,102 +10,53 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_foundation-icons 
  *= require_foundation.min
  *= require_tree .
  *= require_self
  */
 
-h1, h2, h3, h4, h5, h6 { font-family: Open Sans }
+/* FONTS */
+h1, h2, h3, h4, h5, h6 { font-family: Open Sans; font-weight: 300 }
 body { font-family: Open Sans }
 html { font-family: Open Sans }
 p { font-family: Open Sans }
 a { font-family: Open Sans }
-  
-.signup-panel {
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-top: 30px;
-  background: #fff;
-  -webkit-box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6);
-  box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6);
-}
-.signup-panel i {
-  font-size: 30px;
-  line-height: 50px;
-  color: #999;
-}
-.signup-panel form input, .signup-panel form span {
-  height: 50px;
-}
-.signup-panel .welcome {
-  font-size: 26px;
-  text-align: center;
-  margin-left: 0;
-}
-.signup-panel p {
-  font-size: 13px;
-  font-weight: 200;
-  margin-left: 25%;
-}
-.signup-panel .button {
-  margin-left: 35%;
-}
+a.login { font-size: 14px; font-weight: 500; display:inline }
 
-.background { 
-	position: fixed; 
-	background:rgba(0,0,0,0.6); 
-	width: 100%; 
-	height: 100%; 
-	top: 0px; 
-	left: 0px 
-}
 
-.background-blackout { 
-  position: fixed; 
-  background:rgba(0,0,0,0.6); 
-  width: 100%; 
-  height: 100%; 
-  top: 0px; 
-  left: 0px;
-}
+/* FORM ELEMENTS */
+textarea { height: 100px }
 
-.upload-panel {
-  display: none; 
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  height: 300px;
-  width: 400px;
-  background: #fff;
-  margin-left: auto;
-  margin-right: auto;
-  -webkit-box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6);
-  box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6);
-}
 
-.hidden {  
-  display: none;  
-}  
-  
-.visuallyhidden {  
-  opacity: 0;  
-}   
+/* FORM VALIDATION */
+input.invalid, textarea.invalid{ border: 2px solid red }
+input.valid, textarea.valid{ border: 2px solid green }
 
-input.invalid, textarea.invalid{
-    border: 2px solid red;
-}
- 
-input.valid, textarea.valid{
-    border: 2px solid green;
-}
 
-textarea {
-  height: 100px;
-}
+/* LOGIN SCREEN */ 
+.signup-panel form input, .signup-panel form span { height: 50px }
+.signup-panel i { font-size: 30px; line-height: 50px; color: #999 }
+.signup-panel .welcome { font-size: 26px; font-weight: 300; text-align: center; margin-left: 0 }
+.signup-panel { border-radius: 5px; border: 1px solid #ccc; padding: 15px 15px 0 15px; margin-top: 30px; background: #fff;
+                -webkit-box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6);
+                -moz-box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6);
+                box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6) }
 
-.signup-panel .button {
-   margin: auto; 
-}
+.background { position: fixed; background:rgba(0,0,0,0.6); width: 100%; height: 100%; top: 0px; left: 0px }
+
+
+/* UPLOAD SCREEN */ 
+.upload-panel form input, .signup-panel form span { height: 50px }
+.upload-panel i { font-size: 30px; line-height: 50px; color: #999 }
+.upload-panel .welcome { font-size: 26px; font-weight: 300; text-align: center; margin-left: 0 }
+.upload-panel { border-radius: 5px; border: 1px solid #ccc; padding: 15px 15px 0 15px; margin-top: 30px; background: #fff;
+                -webkit-box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6);
+                -moz-box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6);
+                box-shadow: 0 10px 10px -8px rgba(0,0,0,0.6) }
+
+.upload-background { display: none; position: fixed; background:rgba(0,0,0,0.6); width: 100%; height: 100%; top: 0px; left: 0px }
+
+
+.hidden { display: none }
+.reveal { display: block }
+.top-section { margin: 30px 0 22px; padding: 0 0 22px 0 }  
